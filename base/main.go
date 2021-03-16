@@ -36,12 +36,12 @@ func main() {
 func main() {
 	r := gee.New()
 	r.GET("/", func(w http.ResponseWriter, req *http.Request) {
-		fmt.Fprintf(w, "URL.Path=%q\n", req.URL.Path)
+		fmt.Fprintf(w, "URL.Path=%s\n", req.URL.Path)
 	})
 
 	r.GET("/HelloRex", func(w http.ResponseWriter, req *http.Request) {
 		for k, v := range req.Header {
-			fmt.Fprintf(w, "Header[%q] = %q\n", k, v)
+			fmt.Fprintf(w, "Header[%s] = %s\n", k, v)
 		}
 	})
 
